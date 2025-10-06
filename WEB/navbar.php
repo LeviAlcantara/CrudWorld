@@ -2,7 +2,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <img src="./img/logo.png" class="navbar-brand img-nav">
+    <img src="../img/logo.png" class="navbar-brand img-nav">
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="nav nav-pills" id="pills-tab" role="tablist">
