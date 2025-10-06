@@ -1,0 +1,23 @@
+.h2{font-size: 3vh;}
+.h3{font-size: 2vh;}
+.h4{font-size: 1.5vh;}
+.bold{font-weight: bold;}
+
+/* Navbar */
+nav{
+    height: 10vh;
+    padding: 1vh;
+    background-color: rgb(185, 229, 255);
+    display: flex;
+    align-items: center;
+}
+.img-nav{
+    height: 100%;
+}
+#navbarTogglerDemo02{
+    background-color: white;
+    padding: 1vh;
+    box-shadow: black 0px 0px 70px -25px;
+    display: flex;
+    justify-content: center;
+}
