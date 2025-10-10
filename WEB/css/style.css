@@ -8,9 +8,6 @@ nav{
     height: 10vh;
     padding: 1vh;
     background-color: rgb(185, 229, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 ul.nav.nav-pills{
     width: 100%;
@@ -21,5 +18,13 @@ ul.nav.nav-pills{
     align-items: center;
     justify-content: center;
 }
-@media screen and (max-width: 575px){
+div.col-12{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(209, 237, 255);
+}
+.img-logo{
+    height: 5vh;
 }

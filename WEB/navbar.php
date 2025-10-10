@@ -14,3 +14,10 @@
         </li>
     </ul>
 </nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 bold h2">
+            <img class="img-logo" src="../img/logo.png" alt=""> CRUD World
+        </div>
+    </div>
+</div>
