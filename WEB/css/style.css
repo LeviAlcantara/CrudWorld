@@ -3,15 +3,60 @@ body{
     font-family: "Mozilla Headline", sans-serif;
 }
 
+div.container-fluid.index{
+    height: 100vh;
+
+    & div.row{
+        height: 100vh;
+
+        & div.col-6{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & a{
+                width: 60%;
+                background-color: rgb(129, 146, 177);
+                border-radius: 5vh;
+                border: 5px solid black;
+                color: black;
+                font-weight: bold;
+
+                & p{
+                    font-size: 3vh;
+                    text-align: center;
+                    width: 100%;
+                }
+                & img{
+                    height: 50%;
+                    width: 100%;
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    border-radius: 4vh;
+                }
+            }
+            & a:hover{
+                text-decoration: none;
+                width: 62%; 
+
+                & img{
+                    height: 52%;
+                }
+            }
+        }
+    }
+}
+
 div.bg-color-orange{
     z-index: 1000;
     background-color: rgb(114, 153, 226);
     height: 100%;
     position: fixed;
     display: block;
-    align-content: center;
+    align-content: top;
     text-align: center;
     font-size: 1vh;
+    padding-top: 5vh;
 
     & p{
         color:white;
@@ -20,18 +65,7 @@ div.bg-color-orange{
     & select, input[type="number"], input[type="text"]{
         width: 100%;
         height: 6%;
-        margin-bottom: 1vh;
         border-radius: 5px;
-    }
-    & input[type="file"]{
-        width: 100%;
-        height: 7%;
-        margin-bottom: 1%;
-        border-radius: 5px;
-    }
-    & input[type="radio"]{
-        width: 5%;
-        height: 5%;
     }
     & a>div{
         padding: 4px;
