@@ -32,11 +32,11 @@ INSERT INTO continentes (continente) VALUES
 ('Oceania');
 
 INSERT INTO paises (nome, populacao, idioma, continente) VALUES
-('Brasil', 212812405, 'Português', 'Américas'),
-('Estados Unidos', 347275807, 'Inglês', 'Américas'),
-('México', 131946900, 'Espanhol', 'Américas'),
-('Canadá', 40126723, 'Inglês/Francês', 'Américas'),
-('Argentina', 45851378, 'Espanhol', 'Américas');
+('Brasil', 212812405, 'Português', 'América'),
+('Estados Unidos', 347275807, 'Inglês', 'América'),
+('México', 131946900, 'Espanhol', 'América'),
+('Canadá', 40126723, 'Inglês/Francês', 'América'),
+('Argentina', 45851378, 'Espanhol', 'América');
 
 INSERT INTO paises (nome, populacao, idioma, continente) VALUES
 ('Alemanha', 84075075, 'Alemão', 'Europa'),
