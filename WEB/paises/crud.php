@@ -54,6 +54,51 @@
 					echo("</tr>");
 				}
 				echo("</table>"); //finaliza a tabela
+
+				// Monta a URL da API
+				$url = "https://restcountries.com/v3.1/name/" . urlencode($nome);
+
+				// Faz a requisição à API
+				$response = file_get_contents($url);
+
+				// Se der erro de conexão
+				if ($response === FALSE) {
+					die("<p>❌ Erro ao acessar a API REST Countries.</p>");
+				}
+
+				// Converte o JSON em um array PHP
+				$data = json_decode($response, true);
+
+				// Se o país não for encontrado
+				if (empty($data)) {
+					die("<p>País não encontrado.</p>");
+				}
+
+				// Pega o primeiro resultado
+				$country = $data[0];
+
+				// Pega os dados principais
+				$capital = $country['capital'][0] ?? 'Sem capital';
+				$bandeira = $country['flags']['png'] ?? '';
+				$moedas = $country['currencies'] ?? [];
+
+				// Monta o nome e símbolo da moeda
+				if (!empty($moedas)) {
+					$codigo = array_key_first($moedas);
+					$nome_moeda = $moedas[$codigo]['name'] ?? 'Desconhecida';
+					$simbolo_moeda = $moedas[$codigo]['symbol'] ?? '';
+				} else {
+					$nome_moeda = 'Desconhecida';
+					$simbolo_moeda = '';
+				}
+
+				// Exibe o resultado
+				echo "<h2>🌍 Informações sobre {$nome}</h2>";
+				echo "<img src='{$bandeira}' alt='Bandeira de {$nome}' width='200'><br><br>";
+				echo "<p><strong>Capital:</strong> {$capital}</p>";
+				echo "<p><strong>Moeda:</strong> {$nome_moeda} ({$simbolo_moeda})</p>";
+
+
 			}
 			else{ //nenhum dado na tabela
 				echo "nenhum dado inserido por enquanto";

@@ -56,6 +56,45 @@
 					echo("</tr>");
 				}
 				echo("</table>"); 
+
+				// Substitua pela sua chave da API do OpenWeatherMap
+				$apiKey = "a9404d4077e61f59edb3db61b814615c";  
+
+				// Codifica a cidade para a URL (importante para nomes com acentos)
+				$cidadeURL = urlencode($nome);
+
+				// Monta a URL da API (retorna dados em °C e português)
+				$url = "https://api.openweathermap.org/data/2.5/weather?q={$cidadeURL}&appid={$apiKey}&units=metric&lang=pt_br";
+
+				// Faz a requisição
+				$resposta = file_get_contents($url);
+
+				// Verifica se deu certo
+				if ($resposta === FALSE) {
+					die("Erro ao acessar a API do OpenWeatherMap.");
+				}
+
+				// Decodifica o JSON
+				$dados = json_decode($resposta, true);
+
+				// Verifica se a cidade foi encontrada
+				if ($dados["cod"] != 200) {
+					die("Cidade não encontrada.");
+				}
+
+				// Extrai informações principais
+				$temp = $dados["main"]["temp"];
+				$umidade = $dados["main"]["humidity"];
+				$descricao = ucfirst($dados["weather"][0]["description"]);
+				$icone = $dados["weather"][0]["icon"];
+				$pais = $dados["sys"]["country"];
+
+				// Exibe na tela
+				echo "<h2>Clima em {$nome} ({$pais})</h2>";
+				echo "<img src='https://openweathermap.org/img/wn/{$icone}@2x.png' alt='Clima'>";
+				echo "<p><strong>Temperatura:</strong> {$temp} °C</p>";
+				echo "<p><strong>Umidade:</strong> {$umidade}%</p>";
+				echo "<p><strong>Condição:</strong> {$descricao}</p>";			
 			}
 			else{ //nenhum dado na tabela
 				echo "nenhum dado inserido por enquanto";

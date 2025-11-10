@@ -1,5 +1,6 @@
 <!-- Parte Laranja -->
 <div class="col-3 bg-color-orange">
+    <a href="../index.php" class="btn btn-primary mt-2">Retornar</a>
     <form name="f" id="f" method="post" action="crud.php" enctype="multipart/form-data">
         <input type="text" name="acao" id="acao" class="campo form-control mb-2" style="display:none"></input><br>
         <select name="select" id="select" class="form-control mb-2" onchange="mostrarInputs()" required>
